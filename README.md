@@ -32,7 +32,28 @@ Com isso, você pode compilar **APKs Android em Python** diretamente no celular,
    nano setupandroidbuild.sh
    ```
 
-2. Cole o conteúdo do script.  
+2. Cole o conteúdo do script.
+```bash
+   #!/data/data/com.termux/files/usr/bin/bash
+# Script para configurar Termux como ambiente de build Android
+
+echo "🔧 Atualizando pacotes..."
+pkg update -y && pkg upgrade -y
+
+echo "📦 Instalando pacotes essenciais..."
+pkg install -y git python clang zip unzip libffi openssl libjpeg-turbo freetype sqlite android-tools
+
+echo "🐍 Atualizando pip e ferramentas Python..."
+pip install --upgrade pip setuptools wheel cython
+
+echo "🎨 Instalando frameworks Python..."
+pip install kivy kivymd plyer flask buildozer
+
+echo "📂 Configurando acesso ao armazenamento..."
+termux-setup-storage
+
+echo "✅ Ambiente pronto! Use 'buildozer init' para começar."
+``` 
 
 3. Dê permissão de execução:
    ```bash
