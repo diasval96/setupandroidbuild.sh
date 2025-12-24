@@ -37,7 +37,7 @@ Com isso, você pode compilar **APKs Android em Python** diretamente no celular,
    #!/data/data/com.termux/files/usr/bin/bash
    # Script para configurar Termux como ambiente de build Android
 
-echo "🔧 Atualizando pacotes..."
+   echo "🔧 Atualizando pacotes..."
    pkg update -y && pkg upgrade -y
 
    echo "📦 Instalando pacotes essenciais..."
